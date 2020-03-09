@@ -1,6 +1,8 @@
 #!/bin/bash
 units=3992.382
-units=4222.752
+units=4222.75
+units=4277.606
+units=4374.23
 now=$((($(date +%s) - 3600*24)))
 yesterday=$(date +%d/%m/%Y --date=@$now)
 yesterday=`echo $yesterday | sed "s|/|\\\\\\\\/|g"`
