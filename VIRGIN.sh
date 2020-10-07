@@ -5,7 +5,7 @@ units=4222.752
 units=4277.606
 units=4374.23
 units=4445.083
-unitsAK=95439.844
+unitsAKi=95439.844
 unitsAKb=9311.205
 unitsAKp=12786.471
 now=$((($(date +%s) - 3600*24)))
@@ -26,7 +26,8 @@ curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n
 
 if [ $person = akiko ]
 then
-curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n "/$yesterday/p"  | awk -F, '/UK Index Track/{print $3}'|sed "s/\"//g" | awk -vDT=$(date +%d/%m/%Y --date=@$now) -vUU=$unitsAK '{print DT,$NF,UU,$NF*UU}'
+curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n "/$yesterday/p"  | awk -F, '/UK Index Track/{print $3}'|sed "s/\"//g" | awk -vDT=$(date +%d/%m/%Y --date=@$now) -vUU=$unitsAKi '{print DT,$NF,UU,$NF*UU}'
+curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n "/$yesterday/p"  | awk -F, '/UK Index Track/{print $3}'|sed "s/\"//g" | awk -vDT=$(date +%d/%m/%Y --date=@$now) -vUU=$unitsAKp '{print DT,$NF,UU,$NF*UU}'
 
 curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n "/$yesterday/p"  | awk -F, '/^\"Bond and Gilt/{print $3}'|sed "s/\"//g" | awk -vDT=$(date +%d/%m/%Y --date=@$now) -vUU=$unitsAKb '{print DT,$NF,UU,$NF*UU}'
 fi
