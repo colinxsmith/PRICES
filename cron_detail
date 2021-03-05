@@ -1,0 +1,2 @@
+00 14 * * * /home/pi/prices/VIRGIN.sh >> /home/pi/prices/hist
+05 14 * * * /home/pi/prices/VIRGIN.sh akiko >> /home/pi/prices/histAK
