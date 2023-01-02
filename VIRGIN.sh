@@ -45,7 +45,7 @@ then
 curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n "/$yesterday/p"  | awk -F, '/UK Index Track/{print $3}'|sed "s/\"//g" | awk -vDT=$(date +%d/%m/%Y --date=@$now) -vUU=$unitsAKi '{print DT,$NF,UU,$NF*UU}'
 curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n "/$yesterday/p"  | awk -F, '/UK Index Track/{print $3}'|sed "s/\"//g" | awk -vDT=$(date +%d/%m/%Y --date=@$now) -vUU=$unitsAKp '{print DT,$NF,UU,$NF*UU}'
 
-curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n "/$yesterday/p"  | awk -F, '/^\"Bond and Gilt/{print $3}'|sed "s/\"//g" | awk -vDT=$(date +%d/%m/%Y --date=@$now) -vUU=$unitsAKb '{print DT,$NF,UU,$NF*UU}'
+curl -A "Mozilla/4.0"  https://uk.virginmoney.com/fundprices/prices.csv | sed -n "/$yesterday/p"  | awk -F, '/^\"Bond Fund/{print $3}'|sed "s/\"//g" | awk -vDT=$(date +%d/%m/%Y --date=@$now) -vUU=$unitsAKb '{print DT,$NF,UU,$NF*UU}'
 fi
 
 
