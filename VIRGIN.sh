@@ -30,6 +30,9 @@ unitsAKi=104046.494
 unitsAKb=9502.168
 unitsAKp=13700.147
 unitsAKi=106988.520
+unitsAKi=108613.801
+unitsAKp=13853.547
+unitsAKb=9608.693
 now=$((($(date +%s) - 3600*24)))
 yesterday=$(date +%d/%m/%Y --date=@$now)
 yesterday=`echo $yesterday | sed "s|/|\\\\\\\\/|g"`
